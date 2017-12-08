@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Osa 2</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2>Aikaraja</h2>
+  <p>Sama prosessi kuin ensimmäisessä, mutta nyt käyttäjä voi antaa maksimituntimäärän,
+    jonka mukaan ohjelma yrittää laskea mahdollisimman monta tai, mikäli ohjelma ei löydä yhtä useampaa,
+    vähiten aikaa vievän tehtävän.
+  </p>
+  <ion-label color="primary">Maksimi tuntimäärä</ion-label>
+  <ion-input type="number" min="0" [(ngModel)]="maxTunnit"></ion-input>
+  <button ion-button block (click)="laskeReppu()">Laske reppu</button>
+  <ion-list>
+    <ion-item *ngFor="let tehtava of toka_lista">
+        <h3>Tehtävän nimi: {{ tehtava.t_nimi }}</h3>
+        <h3>Arvioitu suoritusaika: {{ tehtava.t_aika }} tuntia</h3>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item *ngFor="let esine of reppu">
+      <h3>Repussa olevan tehtävän nimi: {{esine.t_nimi}}</h3>
+      <h3>Repussa olevan tehtävän suoristusaika: {{esine.t_aika}}</h3>
+    </ion-item>
+    <p *ngIf="reppu == []">Reppu on tyhjä</p>
+  </ion-list>
+  
+</ion-content>

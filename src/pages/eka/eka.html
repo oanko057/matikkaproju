@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Osa 1</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2>Yksinkertainen listaus ja tutkinta</h2>
+  <p>
+    Vähentävä algoritmi tutkii, onko kukin taulukon arvo (tunnit) pienempi kuin seuraava.
+    Taulukon arvot ovat koodissa määriteltyjä vakioita, eikä käyttäjän pitäisi pystyä muuttamaan niitä.
+  </p>
+  <ion-item *ngFor="let tehtava of eka_lista">
+   <h3>Tehtävän nimi: {{ tehtava.e_nimi }}</h3>
+   <h3>Arvioitu suoritusaika: {{ tehtava.e_aika }} tuntia</h3>
+  </ion-item>
+  Nopein tehtävä on: {{ eka_paras.e_nimi }}
+</ion-content>
